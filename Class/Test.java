@@ -6,7 +6,7 @@ public class Test{
     }
 }
 class Baby{
-    void sayHello(){
+    public void sayHello(){
         System.out.println("My name is "+ this.name);
     } 
     int age = 1;
