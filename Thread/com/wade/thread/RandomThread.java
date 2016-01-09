@@ -8,11 +8,12 @@ public class RandomThread extends Thread{
 		this.end = end;
 	}
 	public void run(){
-		int sec = (int) (Math.random()* 10);
-		System.out.println("gonna sleep for " + sec + " secs");
+		int msec = (int) (Math.random()* 10000);
+		String threadName = Thread.currentThread().getName();
+		System.out.println(threadName + " gonna sleep for " + msec + " msec");
 		try{
-			Thread.currentThread().sleep( sec );
-			System.out.println("thread end");
+			Thread.currentThread().sleep( msec );
+			System.out.println(threadName + "thread end");
 		}catch (Exception e){
 			e.printStackTrace();
 		}
