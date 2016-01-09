@@ -11,6 +11,9 @@ class Baby{
     } 
     int age = 1;
     String name ;
+    Baby(){
+        System.out.println("I'm born");
+    }
     Baby(String name){
        this.name = name; 
     }
