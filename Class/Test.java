@@ -1,17 +1,17 @@
-public Class Test{
+public class Test{
     public static void main(String args[]){
-        Human person1 = new Human('Wade');
+        Baby person1 = new Baby("Wade");
         person1.sayHello();
         System.out.println(person1.age);
     }
 }
-class Human{
+class Baby{
     void sayHello(){
-        System.out.println('My name is ', name);
+        System.out.println("My name is "+ this.name);
     } 
-    int age = 0;
+    int age = 1;
     String name ;
-    void Human(String name){
+    Baby(String name){
        this.name = name; 
     }
 }
