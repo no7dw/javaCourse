@@ -4,6 +4,7 @@ package src;
 public class BankAccount
 {
 	private final double[] accounts;
+	// private Lock bankLock = new ReentrantLock();
 	public BankAccount(int n ,double initBalance)
 	{
 		accounts = new double[n];
@@ -13,12 +14,18 @@ public class BankAccount
 
 	public void transfer(int from, int to ,double amount)
 	{
-		if(accounts[from]<amount) return;
-		System.out.print(Thread.currentThread());
-		accounts[from] -= amount;
-		System.out.printf("%10.2f from %d to %d", amount, from, to);
-		accounts[to] += amount;
-		System.out.printf("Total Balance: %10.2\n", getTotalBalance());
+		// bankLock.lock();
+		// try{
+			if(accounts[from]<amount) return;
+			System.out.print(Thread.currentThread());
+			accounts[from] -= amount;
+			System.out.printf("%10.2f from %d to %d", amount, from, to);
+			accounts[to] += amount;
+			System.out.printf("Total Balance: %10.2\n", getTotalBalance());
+		// }
+		// finally{
+		// 	bankLock.unlock();
+		// }
 	}
 
 	public double getTotalBalance()
