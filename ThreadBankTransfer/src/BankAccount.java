@@ -1,10 +1,12 @@
 // BankAccount.java
 package src;
 
+import java.util.concurrent.locks.*;
+
 public class BankAccount
 {
 	private final double[] accounts;
-	// private Lock bankLock = new ReentrantLock();
+	private Lock bankLock = new ReentrantLock();
 	public BankAccount(int n ,double initBalance)
 	{
 		accounts = new double[n];
@@ -14,18 +16,18 @@ public class BankAccount
 
 	public void transfer(int from, int to ,double amount)
 	{
-		// bankLock.lock();
-		// try{
+		bankLock.lock();
+		try{
 			if(accounts[from]<amount) return;
 			System.out.print(Thread.currentThread());
 			accounts[from] -= amount;
 			System.out.printf("%10.2f from %d to %d%n", amount, from, to);
 			accounts[to] += amount;
 			System.out.printf("Total Balance: %10.2f%n", getTotalBalance());
-		// }
-		// finally{
-		// 	bankLock.unlock();
-		// }
+		}
+		finally{
+			bankLock.unlock();
+		}
 	}
 
 	public double getTotalBalance()
