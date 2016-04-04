@@ -1,5 +1,5 @@
 // AsyncBankTest.java
-package ThreadBankTransfer;
+package src;
 
 public class AsyncBankTest
 {

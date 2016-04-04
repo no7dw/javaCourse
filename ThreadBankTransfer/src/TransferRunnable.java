@@ -1,5 +1,5 @@
 // TransferRunnable.java
-package ThreadBankTransfer;
+package src;
 
 public class TransferRunnable implements Runnable
 {
