@@ -10,7 +10,7 @@ public class SimpleThreadServer {
             ServerSocket listener = new ServerSocket(8080);                 
             while (true) {
                 Socket socket = listener.accept();
-                System.out.println("new coming");//why print 3 times
+                System.out.println("new coming");//why print 3 times ,cause by browser, if use curl, only print once
                 try {
                     ReqHandler.handleRequest(socket);
                 } catch (IOException e) {
