@@ -1,19 +1,23 @@
-final static String response=
-        “HTTP/1.0 200OK/r/n” +
-        “Content-type:text/plain/r/n” +
-        “/r/n” +
-        “Hello World/r/n”;
+package com.wade.thread;
 
-public static void handleRequest(Socket socket)throws IOException{
-        // Read the input stream, and return “200 OK”
+import java.io.*;
+import java.net.*;
+import java.nio.charset.StandardCharsets;
+
+public class ReqHandler {
+    //throws IOException
+    public static void handleRequest(Socket socket) throws IOException {
+        final String response = "HTTP/1.0 200OK\r\n" + "Content-type:text/plain\r\n" + "\r\n" + "Hello World\r\n";
+        // Read the input stream, and return "200 OK”
         try{
-        BufferedReader in=new BufferedReader(
-        new InputStreamReader(socket.getInputStream()));
-        log.info(in.readLine());
-
-        OutputStream out=socket.getOutputStream();
-        out.write(response.getBytes(StandardCharsets.UTF_8));
-        }finally{
-        socket.close();
+            BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+            // log.info(in.readLine());
+            System.out.println("Hello");
+            OutputStream out= socket.getOutputStream();
+            out.write(response.getBytes(StandardCharsets.UTF_8));
         }
+        finally{
+            socket.close();
         }
+    }
+}

@@ -3,7 +3,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Connection;
 import java.sql.Statement;
- 
+// import com.mysql.jdbc.Driver; 
  
 public class MysqlDemo {
     public static void main(String[] args) throws Exception {
