@@ -12,8 +12,8 @@ target:
 	javac ThreadPoolQueue.java
 
 run:
-	java SimpleThreadDemo
+	#java SimpleThreadDemo
 	#java SimpleThreadServer
 	#java ThreadPoolServer
-	#java ThreadPoolQueue
+	java ThreadPoolQueue
 	
