@@ -27,12 +27,17 @@ public class MongoClientTest
 		//count with two condiction
 		queryCount(collection);
 
-		//query inter with two condiction
+		//query inter with two condiction which AND
 		FindIterable<Document> findIterable = 
 		collection
 		.find(new Document("type", 2).append("user_id", "54ce55b06f48531b4bd275fc"))
 		.sort(new Document("user_id", 1))
 		.limit(3);
+		
+		//OR
+		//FindIterable<Document> iterable = db.getCollection("restaurants").find(
+        // new Document("$or", asList(new Document("cuisine", "Italian"),
+                // new Document("address.zipcode", "10075"))));
 
 		//cursor output each
          MongoCursor<Document> mongoCursor = findIterable.iterator();  
