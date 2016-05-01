@@ -10,6 +10,11 @@ import java.lang.System;
 
 public class MongoClientTest 
 {
+	public static void queryCount(MongoCollection<Document> collection){
+		//re count to see the change
+		Long number = collection.count(new Document("type",2).append("user_id", "54ce55b06f48531b4bd275fc"));
+		System.out.printf("query has docs count %d\n", number);
+	};
 	public static void main(String[] args)
 	{
 		MongoClient mongoClient = new MongoClient();// new MongoClient( "localhost" , 27017 );
@@ -20,8 +25,8 @@ public class MongoClientTest
 		System.out.println("集合 user_account_cashflow 选择成功");
 
 		//count with two condiction
-		Long number = collection.count(new Document("type",2).append("user_id", "54ce55b06f48531b4bd275fc"));
-		System.out.printf("query has docs count %d\n", number);
+		queryCount(collection);
+
 		//query inter with two condiction
 		FindIterable<Document> findIterable = 
 		collection
@@ -37,9 +42,15 @@ public class MongoClientTest
          collection.updateMany(Filters.eq("user_id", "54ce55b06f48531b4bd275fc"),
          	new Document("$set",new Document("user_id","54cef05579337f164b365051")));
 
-		//re count to see the change
-		number = collection.count(new Document("type",2).append("user_id", "54ce55b06f48531b4bd275fc"));
-		System.out.printf("query has docs count %d\n", number);
+		Document insertDoc = new Document("type", 2)
+				.append("user_id", "54ce55b06f48531b4bd275fc")
+				.append("amount", 100)
+				.append("remark", "Fri Apr 29 2016 00:00:00 GMT+0800 (CST)本金收益是100元");
+
+		collection.insertOne(insertDoc);//should return id
+		queryCount(collection);
+		collection.deleteOne(insertDoc);
+		queryCount(collection);
 
 
 	}
