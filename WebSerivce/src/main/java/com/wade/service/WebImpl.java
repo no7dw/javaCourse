@@ -18,7 +18,7 @@ public class WebImpl implements Web {
     Map<String, String> data = new HashMap<String, String>();
    
     JSONObject outData = new JSONObject();
-    outData.put("data", "Hello World");
+    outData.put("data", "Hello World2333s");
     return Response.ok(outData).build();
   }
 
