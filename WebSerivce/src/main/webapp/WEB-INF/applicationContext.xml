@@ -14,7 +14,7 @@
   <import resource="classpath:META-INF/cxf/cxf.xml" />
   <context:component-scan base-package="cn.kaolalicai.*" />
 
-  <jaxrs:server id="encodeService" address="/encodeservices">
+  <jaxrs:server id="Web" address="/Web">
     <jaxrs:providers>
       <bean class="org.codehaus.jackson.jaxrs.JacksonJsonProvider" />
     </jaxrs:providers>

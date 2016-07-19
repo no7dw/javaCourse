@@ -11,22 +11,24 @@ import net.sf.json.JSONObject;
 public class WebImpl implements Web {
 
   @Override
-  public Response PostHelloWorldData(String inData) {
+  public Response CreateUser(String inData) {
     if(inData==null) {
       return Response.status(Response.Status.BAD_REQUEST).build();
     }
-    Map<String, String> data = new HashMap<String, String>();
+    // Map<String, String> data = new HashMap<String, String>();
    
     JSONObject outData = new JSONObject();
-    outData.put("data", "Hello World2333s");
+    outData.put("code", "0");
+    outData.put("data", "1");
     return Response.ok(outData).build();
   }
 
   @Override
-  public Response getReturnData(String inData) {
-    System.out.println("parameter: " + inData);
+  public Response getUser(String inData) {
+    // System.out.println("parameter: " + inData); //todo
     JSONObject outData = new JSONObject();
-    outData.put("decodeData", "Hello World2");
+    outData.put("code", 0);
+    outData.put("data", "2");
     return Response.ok(outData).build();
   }
   
