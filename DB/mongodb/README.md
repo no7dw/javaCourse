@@ -1,4 +1,8 @@
 #mongodb java demo
+run 
+    mvn package
+
+to install mongo-java-driver
 
 ref: 
 link [1]

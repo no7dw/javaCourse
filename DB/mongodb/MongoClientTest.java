@@ -17,7 +17,13 @@ public class MongoClientTest
 	};
 	public static void main(String[] args)
 	{
-		MongoClient mongoClient = new MongoClient();// new MongoClient( "localhost" , 27017 );
+		// MongoClient mongoClient = new MongoClient(Arrays.asList(new ServerAddress("localhost", 27017),
+  //                                     new ServerAddress("localhost", 27018),
+  //                                     new ServerAddress("localhost", 27019)));
+	// MongoCredential credential = MongoCredential.createCredential(userName, database, password);
+	// MongoClient mongoClient = new MongoClient(new ServerAddress(), Arrays.asList(credential));
+
+		MongoClient mongoClient =  new MongoClient( "localhost" , 27017 );
 		MongoDatabase db = mongoClient.getDatabase("TestDB");
 		System.out.println("Connect to database successfully");
 
