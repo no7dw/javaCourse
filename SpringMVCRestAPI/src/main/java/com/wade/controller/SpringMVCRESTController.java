@@ -18,7 +18,10 @@ public class SpringMVCRESTController {
     @Autowired
     private CustomerRepository repository;
 
-    @RequestMapping(value = "/populateDataFromServer/{name}",  method=RequestMethod.GET, produces={"application/json"})
+    @RequestMapping(
+        value = "/populateDataFromServer/{name}",  
+        method=RequestMethod.GET, 
+        produces={"application/json"})
     public @ResponseBody List<Customer> populateActivePSwapBasketGET(@PathVariable String name) { 
         List<Customer> list = new ArrayList<Customer>();                
         for (Customer customer : repository.findByLastName("Smith")) {
