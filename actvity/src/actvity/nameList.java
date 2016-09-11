@@ -27,9 +27,7 @@ public class nameList {
 		}catch(Exception e){
 			System.out.println(e.getMessage());
 			this.addOne("Error - Wade");
-		}
-		this.addOne("Wade");
-		
+		}				
 	}
 	
 	public ArrayList<String> getNameList(){
@@ -60,7 +58,7 @@ public class nameList {
 		BufferedWriter bw = new BufferedWriter( new FileWriter(defaultFilePath));
 		//write to file
 		for(int i=0; i< saveList.size(); i++)
-			bw.write(saveList.get(i));
+			bw.write(saveList.get(i)+"\n");
 		bw.close();
 	}
 }

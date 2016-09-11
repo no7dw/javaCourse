@@ -10,18 +10,18 @@ public class startActivity {
 		ArrayList al = nl.getNameList();
 		for(int i = 0; i< al.size(); i++)
 			System.out.println(al.get(i));
-//		ArrayList wal = new ArrayList();
-//		wal.add("Philip\n");
-//		wal.add("Navy\n");
-//		wal.add("Smile\n");
-//		try{
-//			nl.SaveList(wal);
-//		}
-//		catch(Exception e){
-//			System.out.println(e.getMessage());
-//			System.out.println("save fail");
-//		}
-		System.out.println("end");
+		ArrayList wal = new ArrayList();
+		wal = al;
+		if(!al.contains("Wade")){
+			wal.add("Wade");
+			try{
+				nl.SaveList(wal);
+			}
+			catch(Exception e){
+				System.out.println(e.getMessage());
+				System.out.println("save fail");
+			}		
+		}
 	}
 
 }
