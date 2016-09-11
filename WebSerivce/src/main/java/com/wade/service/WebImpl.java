@@ -18,8 +18,11 @@ public class WebImpl implements Web {
     // Map<String, String> data = new HashMap<String, String>();
    
     JSONObject outData = new JSONObject();
+    JSONObject detail = new JSONObject();
+    detail.put("created", "20160910");
     outData.put("code", "0");
     outData.put("data", "1");
+    outData.put("detail", detail);
     return Response.ok(outData).build();
   }
 
