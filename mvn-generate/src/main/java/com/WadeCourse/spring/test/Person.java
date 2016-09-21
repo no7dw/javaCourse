@@ -12,6 +12,10 @@ public class Person {
 public Person(){
 	  
   }	
+public static Person getInstance(int id, String name){
+	System.out.println("instance");
+	return new Person(id, name);
+}
   public Person(int id, String name) {
 		
 		this.id = id;

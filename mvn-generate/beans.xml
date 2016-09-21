@@ -5,9 +5,10 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 
-	<bean id="person" class="com.WadeCourse.spring.test.Person">
-		<constructor-arg value="777" name="id" type="int"></constructor-arg>
-		<constructor-arg value="Mary" name="name" type="String"></constructor-arg>
+	<bean id="person" class="com.WadeCourse.spring.test.Person"
+		scope="singleton" factory-method="getInstance">
+		<constructor-arg name="id" value="444" type="int"></constructor-arg>
+		<constructor-arg name="name" value="Windy" type="String"></constructor-arg>
 		<property name="testId" value="123"></property>
 		<property name="address" ref="address"></property>
 	</bean>

@@ -14,15 +14,18 @@ public class App
         
       ApplicationContext context = new FileSystemXmlApplicationContext("beans.xml");
       
-      Person person  = (Person)context.getBean("person");      
-      person.Speak();
-      System.out.println(person.toString());
+      Person person  = (Person)context.getBean("person"); 
+      Person person2  = (Person)context.getBean("person"); 
+//      person.Speak();
+      person.setTestId(666); //if singleton : all set to 666 .if prototype only effect person1           
       
-      Address address = (Address)context.getBean("address");
-      System.out.println(address.toString());
+      System.out.println(person2);
       
-      Address address2 = (Address)context.getBean("address2");
-      System.out.println(address2.toString());
+//      Address address = (Address)context.getBean("address");
+//      System.out.println(address.toString());
+//      
+//      Address address2 = (Address)context.getBean("address2");
+//      System.out.println(address2.toString());
       
       
       ((FileSystemXmlApplicationContext)context).close();
