@@ -13,7 +13,7 @@ public Person(){
 	  
   }	
 public static Person getInstance(int id, String name){
-	System.out.println("instance");
+	System.out.println("Creating Person using factory instance method");
 	return new Person(id, name);
 }
   public Person(int id, String name) {
@@ -21,7 +21,7 @@ public static Person getInstance(int id, String name){
 		this.id = id;
 		this.name = name;
 	}
-public void setAddress(Address address) {
+public void setAddress(Address address) {	
 	this.address = address;
 }
 @Override
