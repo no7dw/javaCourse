@@ -21,12 +21,12 @@
     <jaxrs:serviceBeans>
       <ref bean="cxfServiceImpl" />
     </jaxrs:serviceBeans>
-    <jaxrs:extensionMappings>
+    <!-- <jaxrs:extensionMappings>
       <entry key="xml" value="application/xml" />
       <entry key="json" value="application/json" />
-    </jaxrs:extensionMappings>
+    </jaxrs:extensionMappings> -->
   </jaxrs:server>
 
-  <bean id="cxfServiceImpl"
-    class="com.wade.service.WebImpl" />
+  <!-- <bean id="cxfServiceImpl"
+    class="com.wade.service.WebImpl" /> -->
 </beans>
