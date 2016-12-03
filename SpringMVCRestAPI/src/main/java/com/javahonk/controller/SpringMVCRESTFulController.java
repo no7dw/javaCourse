@@ -11,56 +11,39 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.ws.rs.core.Response;
+
+
+import net.sf.json.JSONObject;
+
 @Controller
 public class SpringMVCRESTFulController {
     
     @RequestMapping(value = "/order/{name}",  method=RequestMethod.GET, produces={"application/json"})
     public @ResponseBody List<Integer> OrderGET(@PathVariable String name) {        
-        
-        if (name.equalsIgnoreCase("JavaHonk")) {
-            return returnDataList();
-        }else {
-            List<Integer> list = new ArrayList<Integer>();
-            list.add(12345);
-            return list;
-        }
-        
+        return returnDataList();
     }
 
     @RequestMapping(value = "/order", method=RequestMethod.POST, produces={"application/json"})
     public @ResponseBody List<Integer> OrderPOST(@RequestParam String name) {       
-        
-        if (name.equalsIgnoreCase("JavaHonk")) {
-            return returnDataList();
-        }else {
-            List<Integer> list = new ArrayList<Integer>();
-            list.add(12345);
-            return list;
-        }
+        return returnDataList();
     }
     
     @RequestMapping(value = "/order/{name}", method=RequestMethod.PUT, produces={"application/json"})
     public @ResponseBody List<Integer> OrderPUT(@PathVariable String name) {        
-        
-        if (name.equalsIgnoreCase("JavaHonk")) {
-            return returnDataList();
-        }else {
-            List<Integer> list = new ArrayList<Integer>();
-            list.add(12345);
-            return list;
-        }
+        return returnDataList();
     }
     
     @RequestMapping(value = "/order/{name}", method=RequestMethod.DELETE, produces={"application/json"})
     public @ResponseBody List<Integer> OrderDelete(@PathVariable String name) {     
-        
-        if (name.equalsIgnoreCase("JavaHonk")) {
-            return returnDataList();
-        }else {
-            List<Integer> list = new ArrayList<Integer>();
-            list.add(12345);
-            return list;
-        }
+        return returnDataList();
+    
+    }
+    private void re(){
+    	JSONObject outData = new JSONObject();
+        outData.put("code", "0");
+        outData.put("data", "1");
+        return Response.ok(outData).build();
     }
     
     private List<Integer> returnDataList() {
@@ -68,7 +51,7 @@ public class SpringMVCRESTFulController {
         Integer randomNum = rand.nextInt();     
         List<Integer> list = new ArrayList<Integer>();
         list.add(randomNum);        
-        return list;
+        return list;//Q: how to make json
     }
 
 }
