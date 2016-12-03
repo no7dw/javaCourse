@@ -14,8 +14,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class SpringMVCRESTFulController {
     
-    @RequestMapping(value = "/popdata/{name}",  method=RequestMethod.GET, produces={"application/json"})
-    public @ResponseBody List<Integer> populateActivePSwapBasketGET(@PathVariable String name) {        
+    @RequestMapping(value = "/order/{name}",  method=RequestMethod.GET, produces={"application/json"})
+    public @ResponseBody List<Integer> OrderGET(@PathVariable String name) {        
         
         if (name.equalsIgnoreCase("JavaHonk")) {
             return returnDataList();
@@ -27,8 +27,8 @@ public class SpringMVCRESTFulController {
         
     }
 
-    @RequestMapping(value = "/popdata", method=RequestMethod.POST, produces={"application/json"})
-    public @ResponseBody List<Integer> populateActivePSwapBasketPOST(@RequestParam String name) {       
+    @RequestMapping(value = "/order", method=RequestMethod.POST, produces={"application/json"})
+    public @ResponseBody List<Integer> OrderPOST(@RequestParam String name) {       
         
         if (name.equalsIgnoreCase("JavaHonk")) {
             return returnDataList();
@@ -39,8 +39,8 @@ public class SpringMVCRESTFulController {
         }
     }
     
-    @RequestMapping(value = "/popdata/{name}", method=RequestMethod.PUT, produces={"application/json"})
-    public @ResponseBody List<Integer> populateActivePSwapBasketPUT(@PathVariable String name) {        
+    @RequestMapping(value = "/order/{name}", method=RequestMethod.PUT, produces={"application/json"})
+    public @ResponseBody List<Integer> OrderPUT(@PathVariable String name) {        
         
         if (name.equalsIgnoreCase("JavaHonk")) {
             return returnDataList();
@@ -51,8 +51,8 @@ public class SpringMVCRESTFulController {
         }
     }
     
-    @RequestMapping(value = "/popdata/{name}", method=RequestMethod.DELETE, produces={"application/json"})
-    public @ResponseBody List<Integer> populateActivePSwapBasketDelete(@PathVariable String name) {     
+    @RequestMapping(value = "/order/{name}", method=RequestMethod.DELETE, produces={"application/json"})
+    public @ResponseBody List<Integer> OrderDelete(@PathVariable String name) {     
         
         if (name.equalsIgnoreCase("JavaHonk")) {
             return returnDataList();
