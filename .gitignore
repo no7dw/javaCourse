@@ -1,6 +1,7 @@
 *.class
 .idea
 */*target/*
+*/*WebRoot/*
 */*.classpath
 */*.settings/*
 */*.springBeans
