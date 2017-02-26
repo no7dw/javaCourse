@@ -191,13 +191,27 @@
             </resource>  
         </resources>  
         <plugins>  
-            <plugin>  
+            <!-- the following will cause error when run command: mvn package
+            to solve this, ref the next line of plugin .
+            ref:http://stackoverflow.com/questions/33390460/maven-error-assembling-war-webxml-attribute-is-required-when-building-the-sprin -->
+            <!-- <plugin>  
                 <artifactId>maven-war-plugin</artifactId>  
                 <configuration>  
                     <webappDirectory>${basedir}/WebRoot</webappDirectory>  
                     <warSourceDirectory>${basedir}/WebRoot</warSourceDirectory>  
                 </configuration>  
-            </plugin>  
+            </plugin>   -->
+            <!-- solve the problem -->
+            <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-war-plugin</artifactId>
+                    <version>2.4</version>
+                    <configuration>
+                        <warSourceDirectory>src/main/webapp</warSourceDirectory>
+                        <warName>mm</warName>
+                        <failOnMissingWebXml>false</failOnMissingWebXml>
+                    </configuration>
+            </plugin>            
             <plugin>  
                 <artifactId>maven-compiler-plugin</artifactId>  
                 <configuration>  
