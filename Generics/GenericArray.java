@@ -6,16 +6,24 @@ public class GenericArray<T> {
         array = (T[]) new Object[size];
     }
 
-    public void put(T value, int index){
+    public void put(int index, T value){
        array[index] = value;
     }
 
     public T get(int index){
         return array[index];
     }
-
+    
     public T[] rep(){
         return array;
+    }
+
+    public String toString(){
+        String str = "";
+        for(int index = 0; index < array.length; index++){
+            str += array[index] + " ";
+        }
+        return str;
     }
 
     public static void main(String[] args){
@@ -24,6 +32,12 @@ public class GenericArray<T> {
         //      at GenericArray.main(GenericArray.java:23)
         //Integer[] ia = (Integer[]) gai.rep();
         Object[] oa = gai.rep();
-        System.out.println(oa.toString());
+        for(int index = 0; index < 4; index++){
+            gai.put(index, index);
+        }
+        System.out.println(gai.toString());
+
+        //Integer[] oa = gai.rep();
+        //System.out.println(oa.toString());
     }
 }
