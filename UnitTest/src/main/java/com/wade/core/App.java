@@ -1,4 +1,4 @@
-package com.wade.core;
+//package com.wade.core;
 public class App {
     public static void main(String[] args){
         System.out.println(HelloWorld());
