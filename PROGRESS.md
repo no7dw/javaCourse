@@ -4,10 +4,18 @@
 
  - 起个项目太TMD复杂了,太TMD多配置了 --> spring boot
  - 太多TMD垃圾没用代码了 hashcode get/seter  --> IDE 自动生成; lombok 注解; @getter @setter 等注解
- - XML配置TMD是上个世纪的产物 --> .properties or yaml 
+ - XML配置TMD是上个世纪的产物 --> .properties or yaml or json
  - pom.xml 太TMD的冗长了 --> IDE 自动提示 or gradle
  - bean 太TMD复杂无用了
- - 语法太TMD复杂无用了
+ - 语法太TMD复杂无用了，起个简单项目，需要写太多代码了 --》 java要背锅，减缓：
+
+    - 使用spring boot ，用starter配置
+    - 用其他动态语言:
+      - Python
+      - Javacript(Node.js/Typescript)
+      - Ruby
+      - Golang
+
  - 编译真太TMD慢了，倒杯咖啡都没搞定 --》买个大点的杯子装☕️ or :
 
     - 增量构建
