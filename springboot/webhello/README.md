@@ -33,7 +33,11 @@ TODO:
 
 #### log
 
- 用lombok包的@Log
+ 用lombok包的@Slf4j
+
+ IntelliJ IDEA 配置compile 报错, can not find symble Slf4j, 解决参考[这里](https://stackoverflow.com/questions/14866765/building-with-lomboks-slf4j-and-intellij-cannot-find-symbol-log
+), 要重启!
+
 
 #### 不同环境配置
 
@@ -48,3 +52,10 @@ TODO:
  - 通常有个 template file 供给大家去修改
  - 大项目很多配置不一样, 不想看到一堆注释掉一堆,然后paste 另外一堆
  - //透过intellij IDEA 这样的maven projects 插件,可视化地、 很方便的切换环境
+
+http://localhost:8080/Hey
+
+`
+    {"code":503,"message":"dev"}
+`
+
