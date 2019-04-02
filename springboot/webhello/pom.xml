@@ -20,17 +20,17 @@
 	<profiles>
 		<profile>
 			<id>dev</id>
+			<properties>
+				<activatedProperties>dev</activatedProperties>
+			</properties>
 			<activation>
 				<activeByDefault>true</activeByDefault>
 			</activation>
-			<properties>
-				<env>dev.properties</env>
-			</properties>
 		</profile>
 		<profile>
 			<id>prod</id>
 			<properties>
-				<env>prod.properties</env>
+				<activatedProperties>prod</activatedProperties>
 			</properties>
 		</profile>
 	</profiles>
@@ -59,6 +59,17 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 		</plugins>
+		<filters>
+			<filter>src/main/resources/maven_build/${env}</filter>
+		</filters>
+		<finalName>${project.artifactId}</finalName>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>true</filtering>
+			</resource>
+		</resources>
+
 	</build>
 
 </project>

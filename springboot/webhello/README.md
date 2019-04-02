@@ -37,14 +37,14 @@ TODO:
 
 #### 不同环境配置
 
- 不同于其他网络文章,觉得[这个](https://blog.csdn.net/a15705952175/article/details/82385933)比较整洁的方案
+ 不同于其他网络文章,觉得[这个](https://blog.csdn.net/a15705952175/article/details/82385933) and [这个](http://dolszewski.com/spring/spring-boot-properties-per-maven-profile/)比较整洁的方案
  不同的开发环境,使用的环境变量,配置不一样:
- - 在resource/maven_build配置不同的prod/dev 的环境变量properties file
+ - 在resource配置不同的prod/dev 的环境变量properties file
  - 在pom.xml 配置不同的 properties
- - application.properties  配置 envCode=${mvn.common.code}
+ - application.properties  配置 启用的环境
 
  为什么这么做:
  - prod 的配置通常为了安全是与 dev 的配置不一样,并且prod 不可见的。
  - 通常有个 template file 供给大家去修改
  - 大项目很多配置不一样, 不想看到一堆注释掉一堆,然后paste 另外一堆
- - 透过intellij IDEA 这样的maven projects 插件,可视化地、 很方便的切换环境
+ - //透过intellij IDEA 这样的maven projects 插件,可视化地、 很方便的切换环境
