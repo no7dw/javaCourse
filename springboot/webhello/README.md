@@ -47,3 +47,4 @@ TODO:
  - prod 的配置通常为了安全是与 dev 的配置不一样,并且prod 不可见的。
  - 通常有个 template file 供给大家去修改
  - 大项目很多配置不一样, 不想看到一堆注释掉一堆,然后paste 另外一堆
+ - 透过intellij IDEA 这样的maven projects 插件,可视化地、 很方便的切换环境
