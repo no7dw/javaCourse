@@ -30,7 +30,7 @@
     - [最佳配置](http://blog.oneapm.com/apm-tech/426.html)
     - 去除部分你不太用的plugin: setting->plugins->xxx
 
-
+ - 为毛这么多对象写hashCode, equals 方法 --> 见[this](https://mp.weixin.qq.com/s/qt9g-NrMf1LvN9Q07hW2Vw)
  
  - 框架太重了
  - maven 下载太TMD慢了 --> 这个锅。。。, 改 conf/settings.xml:
