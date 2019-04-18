@@ -23,6 +23,8 @@ TODO:
  - 自定义自己的exception 的返回,留下 message or code 自定义
  - 定一个ExceptionHandler接exception.class 处理 ,并以@ResponseBody 包成json
 
+再试试访问
+
 `
     {"code":503,"message":"500000003啊"}
 `
@@ -53,9 +55,35 @@ TODO:
  - 大项目很多配置不一样, 不想看到一堆注释掉一堆,然后paste 另外一堆
  - //透过intellij IDEA 这样的maven projects 插件,可视化地、 很方便的切换环境
 
+留意log
+
+`
+    2019-04-02 23:17:10.107  INFO 2460 --- [           main] com.example.demo.WebhelloApplication     : The following profiles are active: dev
+`
+
 http://localhost:8080/Hey
 
 `
     {"code":503,"message":"dev"}
 `
 
+#### 校验参数
+
+#### redis 操作
+
+#### mongodb 操作
+
+ in mongodemo
+
+#### MyBatis
+
+
+### part 2
+
+#### mq 操作
+
+#### rpc 操作
+
+#### 异步
+
+#### 线程
