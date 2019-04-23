@@ -1,7 +1,7 @@
 /**
  * Created by dengwei on 2019/3/26.
  */
-public class DempServiceImpl implements DemoService {
+public class DemoServiceImpl implements DemoService {
     public String sayHello(String name){
         return "Hello " + name
     }
