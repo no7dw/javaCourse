@@ -33,7 +33,7 @@
  - 为毛这么多对象写hashCode, equals 方法 --> 见[this](https://mp.weixin.qq.com/s/qt9g-NrMf1LvN9Q07hW2Vw)
  
  - 框架太重了
- - maven 下载太TMD慢了 --> 这个锅。。。, 改 conf/settings.xml:
+ - maven 下载太TMD慢了 --> 这个锅。。。, 在mvn 安装目录(系统全局) 改 conf/settings.xml , 或者在 ~/.m2 改settings.xml (用户定义) :
 
   `
     <mirror>
