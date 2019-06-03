@@ -1,0 +1,23 @@
+$javac HelloWorld.java
+HelloWorld.java:1: error: package org.apache.commons.lang3 does not exist
+import org.apache.commons.lang3.*;
+^
+HelloWorld.java:5: error: cannot find symbol
+                System.out.println(StringUtils.capitalize(x));
+                                   ^
+  symbol:   variable StringUtils
+  location: class HelloWorld
+2 errors
+
+$java HelloWorld
+Exception in thread "main" java.lang.NoClassDefFoundError: org/apache/commons/lang3/StringUtils
+	at HelloWorld.main(HelloWorld.java:5)
+Caused by: java.lang.ClassNotFoundException: org.apache.commons.lang3.StringUtils
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:381)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:424)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:331)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
+	... 1 more
+
+$ java -cp .:./jars/commons-lang3-3.9.jar HelloWorld
+Abcd
