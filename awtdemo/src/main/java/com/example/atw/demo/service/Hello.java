@@ -22,7 +22,7 @@ public class Hello {
 
 //    @Autowired
 //    @Qualifier("laptop")
-    private Computer laptop;
+//    private Computer laptop;
 
 //    @Autowired
 //    @Qualifier("PC")
