@@ -18,11 +18,20 @@ import org.springframework.stereotype.Component;
 @Getter
 //@Scope(value = "prototype")
 public class Hello {
+//    private Computer computer;
+
     @Autowired
-//    @Qualifier("lap1")
-    private Laptop laptop;
-    private String author;
-    public Hello() {
+    @Qualifier("laptop")
+    private Computer laptop;
+
+    @Autowired
+    @Qualifier("PC")
+    private Computer pc;
+
+
+    //    private String author;
+    public Hello(PC pc) {
+        this.pc = pc;
         System.out.println("constructor created");
     }
 //    public Hello(String author){
@@ -31,6 +40,6 @@ public class Hello {
 //    }
     public void Echo(){
         System.out.println("echo");
-        laptop.show();
+        pc.show();
     }
 }
