@@ -9,11 +9,11 @@ import org.springframework.stereotype.Component;
 
 //@AllArgsConstructor
 @Component
-@Setter
+//@Setter
 @Getter
 //@Scope(value = "prototype")
 public class Hello {
-    @Autowired
+//    @Autowired
     private Compute computer;
 
 //    @Autowired
@@ -33,6 +33,12 @@ public class Hello {
 //    public Hello(){
 //        System.out.println("constructor created with author");
 //    }
+
+    @Autowired
+    public void setComputer(Compute computer) {
+        this.computer = computer;
+    }
+
     public void Echo(){
         System.out.println("echo");
         computer.show();
