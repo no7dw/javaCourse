@@ -1,14 +1,9 @@
 package com.example.atw.demo.service;
 
 
-import lombok.AllArgsConstructor;
-import ch.qos.logback.core.boolex.EvaluationException;
-import com.sun.xml.internal.rngom.digested.DValuePattern;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 
@@ -18,7 +13,8 @@ import org.springframework.stereotype.Component;
 @Getter
 //@Scope(value = "prototype")
 public class Hello {
-    private Computer computer;
+//    @Autowired
+    private Compute computer;
 
 //    @Autowired
 //    @Qualifier("laptop")
@@ -34,8 +30,7 @@ public class Hello {
         this.computer = computer;
         System.out.println("constructor created");
     }
-//    public Hello(String author){
-//        this.author = author;
+//    public Hello(){
 //        System.out.println("constructor created with author");
 //    }
     public void Echo(){

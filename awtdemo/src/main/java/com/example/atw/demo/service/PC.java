@@ -1,9 +1,7 @@
 package com.example.atw.demo.service;
 
-import org.springframework.stereotype.Component;
-
 //@Component("PC")
-public class PC extends Compute {
+public class PC extends Computer {
 //    private String author ;
 
     public PC(String author){

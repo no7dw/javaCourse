@@ -1,11 +1,8 @@
 package com.example.atw.demo.service;
 
-import lombok.AllArgsConstructor;
-import org.springframework.stereotype.Component;
-
 //@Component("laptop")
 //@AllArgsConstructor
-public class Laptop extends Compute {
+public class Laptop extends Computer {
 //    public int cid;
 //    private String author ;
     public Laptop(String author){

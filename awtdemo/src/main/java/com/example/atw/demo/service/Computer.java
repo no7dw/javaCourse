@@ -1,6 +1,8 @@
 package com.example.atw.demo.service;
 
-public interface Computer {
-//    String author = null;
-    void show();
+public abstract class Computer implements Compute {
+    protected String author;
+    public void show(){
+
+    }
 }
