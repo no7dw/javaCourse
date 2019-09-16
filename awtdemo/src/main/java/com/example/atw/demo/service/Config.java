@@ -6,9 +6,10 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class Config {
     @Bean
-    public Computer createComputer1 (){
-//        return new Laptop();
-        return new PC();
+//    public Computer createComputer (String author){
+    public Computer createComputer (){
+        return new Laptop("Wade");
+//        return new PC("Wade");
     }
 
 }

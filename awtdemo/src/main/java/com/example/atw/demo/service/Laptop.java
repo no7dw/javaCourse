@@ -4,12 +4,14 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Component;
 
 //@Component("laptop")
-@AllArgsConstructor
-public class Laptop implements Computer {
+//@AllArgsConstructor
+public class Laptop extends Compute {
 //    public int cid;
-//    public void Laptop(){
-//        System.out.println("Laptop created");
-//    }
+//    private String author ;
+    public Laptop(String author){
+        this.author = author;
+        System.out.println("Laptop created");
+    }
     public void show(){
         System.out.println("laptop show");
     }
